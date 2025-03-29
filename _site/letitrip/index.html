@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virus Simulation</title>
+    <script src="wasm_exec.js"></script>
+    <script src="https://kit.fontawesome.com/1ffe760482.js" crossorigin="anonymous"></script>
+    <script>
+        const go = new Go();
+        WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
+            go.run(result.instance);
+        });
+    </script>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        .slider-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .slider-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #mortalityRate {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Culling Strategy Simulation</h1>
+        <p>This simulation examines the impact of two different strategies, culling 200,000 birds (both infected and healthy) once an outbreak is detected, or allowing the outbreak to run its course. Each strategy has implications as culling will sacrifice healthy birds while allowing the infection to run rampant will also lead to the deaths of many birds and allow the virus to spread to the other farms that you own.</p>
+        <div class="slider-container">
+            <label for="mortalityRate">Mortality Rate (%): <span id="mortalityValue">100</span></label>
+            <input type="range" id="mortalityRate" min="0" max="100" value="100" step="1" 
+                   oninput="document.getElementById('mortalityValue').textContent = this.value">
+        </div>
+        <div class="button-container">
+            <button onclick="runSimulation('culling', document.getElementById('mortalityRate').value)">Run with Culling</button>
+            <button onclick="runSimulation('no-culling', document.getElementById('mortalityRate').value)">Run without Culling</button>
+        </div>
+        <div id="results"></div>
+        <canvas id="chart" width="700" height="400"></canvas>
+    </div>
+</body>
+<footer>
+
+    <div class="basic-footer">
+      <div class="column-page">
+    <div style="text-align: right;">
+      <img src="../assets/111.png" alt="Wake Forest University Logo" style="width: 250px; height: auto;">
+      <p><span class="san-serif" style="font-size: 1.5em;"><i class="fa-solid fa-head-side-virus" aria-label="head-side-virus"></i><span style="font-weight: 600;">&nbsp;&nbsp;I&nbsp;D&nbsp;E&nbsp;A&nbsp;S</span></span> <br> <span class="serif" style="font-size: 1.3em;"><span style = "font-weight: 700;">I</span>nfectious <span style = "font-weight: 700;">D</span>isease <span style = "font-weight: 700;">E</span>pidemiology and <span style = "font-weight: 700;">A</span>pplied <span style = "font-weight: 700;">S</span>tatistics</span></p>
+    </div>
+    
+    <hr>
+    
+    <p>Disclaimer: The information on this page is for general informational purposes only and SHOULD NOT be relied upon as a substitute for sound professional medical advice, evaluation or care from your physician or other qualified health care provider.</p>
+    <p>Please note that this page is not an official page of <a href="https://www.wfu.edu">Wake Forest University</a> or <a href="https://www.wakehealth.edu/">Atrium Wake Forest Baptist Health</a> or <a href="https://school.wakehealth.edu/">Wake Forest University School of Medicine</a>.</p>
+    <p>The content of this page is the sole responsibility of the authors and does not necessarily represent the views of Wake Forest University, Atrium Wake Forest Baptist Health, or Wake Forest University School of Medicine.</p>
+    
+      </div>
+    </div>
+    
+    </footer>
+</html> 

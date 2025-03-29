@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - letitrip/*
 
 website:
   title: "Oh Cluck!"
@@ -12,6 +14,8 @@ website:
         text: Dairy Outbreak Simulation
       - href: https://medewitt.github.io/poultry-farm-game/
         text: Poultry Farm Game
+      - href: letitrip/index.html
+        text: Let It Rip
       - href: https://www.google.com/maps/d/u/0/viewer?mid=1WMtzvlPqvv2o4PQEitCgoxtxlSjfqcw&ll=34.126511881565904%2C-63.77444320884649&z=4
         text: Outbreak Map
       - about.qmd
