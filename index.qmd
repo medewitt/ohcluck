@@ -1,9 +1,13 @@
 ---
-title: "Oh Cluck! H5N1, the Price of Eggs and More!"
+title: "Oh Cluck! Bird Flu, Vaccines, and the Price of Eggs"
 ---
 
 
 ## Introduction
+
+The price of eggs have been on the rise!
+
+<div class="infogram-embed" data-id="_/ph0zrkGXPAhCVtWIIwAh" data-type="interactive" data-title="Average Retail Egg Prices"></div><script>!function(e,n,i,s){var d="InfogramEmbeds";var o=e.getElementsByTagName(n)[0];if(window[d]&&window[d].initialized)window[d].process&&window[d].process();else if(!e.getElementById(i)){var r=e.createElement(n);r.async=1,r.id=i,r.src=s,o.parentNode.insertBefore(r,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script>
 
 
 ## What do farms look like?

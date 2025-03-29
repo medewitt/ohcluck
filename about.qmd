@@ -2,4 +2,7 @@
 title: "About"
 ---
 
-About this site
+Dining Dilemns as is an ongoing, interdisplinary series allowing for informed discussion on complex topics.
+
+![Dining Dilemns](dd.png)
+
