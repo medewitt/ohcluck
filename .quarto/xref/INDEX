@@ -4,5 +4,11 @@
   },
   "about.qmd": {
     "about.html": "65d873ef"
+  },
+  "virology.qmd": {
+    "virology.html": "008d8ea1"
+  },
+  "vaccines.qmd": {
+    "vaccines.html": "53504e5b"
   }
 }

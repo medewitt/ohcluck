@@ -16,8 +16,14 @@ website:
         text: Poultry Farm Game
       - href: letitrip/index.html
         text: Let It Rip
-      - href: https://www.google.com/maps/d/u/0/viewer?mid=1WMtzvlPqvv2o4PQEitCgoxtxlSjfqcw&ll=34.126511881565904%2C-63.77444320884649&z=4
-        text: Outbreak Map
+      - virology.qmd
+      - vaccines.qmd
+      - text: Epidemiology
+        menu:
+        - href: https://www.google.com/maps/d/u/0/viewer?mid=1WMtzvlPqvv2o4PQEitCgoxtxlSjfqcw&ll=34.126511881565904%2C-63.77444320884649&z=4
+          text: Outbreak Map
+        - href: https://cafomaps.org/by-state/nc.html
+          text: Concentrated Animal Feeding Operations in NC
       - about.qmd
 
 format:

@@ -2,12 +2,24 @@
 title: "Oh Cluck! Bird Flu, Vaccines, and the Price of Eggs"
 ---
 
+```{r}
+#| echo: false
+library(glossary)
+glossary_path("glossary.yml")
+glossary_popup("hover")
+```
+
 
 ## Introduction
 
-The price of eggs have been on the rise!
+The price of eggs have been on the rise growing with the cost of a dozen eggs in the United States increasing nearly 288% in price from August 2023 to February 2025!
+This rapid increase in the cost of eggs has outpaced inflation and begs the question: what's causing this???
 
 <div class="infogram-embed" data-id="_/ph0zrkGXPAhCVtWIIwAh" data-type="interactive" data-title="Average Retail Egg Prices"></div><script>!function(e,n,i,s){var d="InfogramEmbeds";var o=e.getElementsByTagName(n)[0];if(window[d]&&window[d].initialized)window[d].process&&window[d].process();else if(!e.getElementById(i)){var r=e.createElement(n);r.async=1,r.id=i,r.src=s,o.parentNode.insertBefore(r,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script>
+
+## Highly Pathogen Avian Influenza
+
+
 
 
 ## What do farms look like?

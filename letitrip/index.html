@@ -29,6 +29,24 @@
     </script>
     <link rel="stylesheet" href="../assets/styles.css">
     <style>
+        .nav-bar {
+            background-color: black;
+            padding: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-bar a:hover {
+            background-color: #333;
+        }
+        
         .slider-container {
             margin: 20px 0;
             text-align: center;
@@ -47,6 +65,9 @@
     </style>
 </head>
 <body>
+    <div class="nav-bar">
+        <a href="../index.html">Oh Cluck!</a>
+    </div>
     <div class="container">
         <h1>Culling Strategy Simulation</h1>
         <p>This simulation examines the impact of two different strategies, culling 200,000 birds (both infected and healthy) once an outbreak is detected, or allowing the outbreak to run its course. Each strategy has implications as culling will sacrifice healthy birds while allowing the infection to run rampant will also lead to the deaths of many birds and allow the virus to spread to the other farms that you own.</p>
