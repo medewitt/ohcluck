@@ -1,0 +1,19 @@
+---
+title: "Oh Cluck! H5N1, the Price of Eggs and More!"
+---
+
+
+## Introduction
+
+
+## What do farms look like?
+
+### Poultry Farms
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gIJxuL7Z-Nw?si=a8Xq_0ita2otAKDH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Dairy Farms
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EaGp8Ru_n1M?si=sDLqtqmzpGr2Yc7t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+

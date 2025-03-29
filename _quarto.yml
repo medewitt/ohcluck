@@ -1,0 +1,25 @@
+project:
+  type: website
+
+website:
+  title: "ohcluck"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: https://kortessis-lab.shinyapps.io/h5n1/
+        text: Dairy Outbreak Simulation
+      - href: https://medewitt.github.io/poultry-farm-game/
+        text: Poultry Farm Game
+      - href: https://www.google.com/maps/d/u/0/viewer?mid=1WMtzvlPqvv2o4PQEitCgoxtxlSjfqcw&ll=34.126511881565904%2C-63.77444320884649&z=4
+        text: Outbreak Map
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
