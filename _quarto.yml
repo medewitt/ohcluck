@@ -4,6 +4,7 @@ project:
 website:
   title: "Oh Cluck!"
   navbar:
+    background: primary
     left:
       - href: index.qmd
         text: Home
@@ -17,9 +18,10 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: [cosmo, theme.scss]
+    css: assets/styles.css
     toc: true
-
+    include-in-header: fragments/header.html
+    include-after-body: fragments/footer.html
 
 

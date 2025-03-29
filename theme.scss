@@ -1,0 +1,551 @@
+// see the brand book:
+// https://wakehealth.sharepoint.com/:b:/r/sites/BrandCenter/Shared%20Documents/22-0011380%20WFUSM%20Brand%20Book%202022_6.15.22.pdf?csf=1&web=1&e=phPp8N
+
+/*-- fonts --*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+//script fonts
+//  --casual
+//@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+//  --formal
+//@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+
+/*-- scss:defaults --*/
+//primary colors
+$primary: #8C6D2C; //web gold
+$primary-rgb: 140, 109, 44;
+$primary75: rgba(140, 109, 44,0.75);
+$primary50: rgba(140, 109, 44,0.50);
+$primary25: rgba(140, 109, 44,0.25);
+$primary10: rgba(140, 109, 44,0.10);
+$primary10fixed: #f3f0e9;
+$primarydark: #624d17;
+$black: #000000;
+$white: #FFFFFF;
+$oldgold: #9E7E38; //old gold
+$goldonblack: #cc9f2e;
+//$primary: #a67f31; //old gold?
+$emphasis-color: primary;
+$emphasis-color-rgb: $primary-rgb;
+
+//secondary colors
+$wakegray: #54565A;
+$secondary: $wakegray;
+$wakeyellow: #FDC314;
+$yellow: $wakeyellow; //warning
+
+//accent colors
+$wakegreen: #6BA539;
+$green: $wakegreen; //success
+$atriumteal: #008C95;
+$cyan: $atriumteal; //info
+$wakelightgray: #CFD2D3;
+$wakecoolgray: #A7A8A9;
+$wakered: #861F41;
+$red: $wakered; //danger
+$wakenavy: #002B49;
+$indigo: $wakenavy;
+$atriumlightgray: #f5f5f5;
+
+//page colors
+$navbar-bg: $black;
+$navbar-fg: $white;
+$navbar-hl: $goldonblack;
+$body-bg: $white;
+$body-color: $wakegray;
+$link-color: $primary;
+$sidebar-hl: $primary;
+$sidebar-fg: $black;
+$sidebar-bg: $primary10fixed;
+$toc-color: $primary;
+$footer-bg: $black;
+$footer-fg: $white;
+$hr-color: $primary;
+//$border-color: $primary;
+
+$gray-300: #dee2e6; //bootstrap default
+$nav-tabs-border-color: $gray-300;
+
+//callouts
+$callout-color-note: $atriumteal;
+$callout-color-tip: $wakegreen;
+$callout-color-warning: $wakeyellow;
+$callout-color-important: $wakered;
+
+
+//fonts
+$font-family-sans-serif: "Nunito Sans", Arial, sans-serif !default;
+$font-family-serif: "Cormorant", Garamond, serif !default;
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+$link-shade-percentage: 0% !default;
+$h1-font-size: 32px;
+
+//tabsets
+$nav-tabs-link-active-color: $black;
+$nav-tabs-link-active-bg: $white;
+$nav-tabs-link-hover-border-color: $white;
+$nav-link-hover-color: $black;
+
+//tabset pills (.panel-tabset .nav-pills)
+$nav-pills-link-active-color: $white;
+$nav-pills-link-active-bg: $black;
+$nav-pills-border-radius: 0;
+
+//navbar
+//$navbar-brand-font-size: 1.1rem;
+//$nav-link-font-size: 0.9rem;
+$navbar-dark-color: $white;
+$navbar-dark-hover-color: $goldonblack;
+//dropdowns
+$dropdown-link-hover-bg: $white;
+
+//cards
+$card-cap-color: $white; //rgba(255,255,255,.8);
+$card-cap-bg: $secondary; //rgba(0,0,0,.75);
+$card-cap-padding-y: 0.2rem;
+$card-cap-padding-x: 0.4rem;
+
+$content-padding-top: 0;
+$spacer: 0.5rem;
+
+/*-- scss:rules --*/
+
+.color-primary{
+  color: $primary;
+}
+
+.serif{
+  font-family: $font-family-serif;
+}
+
+.sans-serif{
+  font-family: $font-family-sans-serif;
+}
+
+.smaller{
+  font-size: 0.9em;
+}
+
+//tabset pills
+/*
+.nav-pills .nav-link.active{
+    border: 2px solid $primary;
+}
+.nav-pills .nav-link {
+    border-radius: $nav-pills-border-radius;
+    border: 2px solid $primary;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+*/
+.nav-pills .nav-link:hover{
+  background-color: $black;
+  color: $white;
+//  border: 2px solid $white;
+}
+
+div.sidebar-item-container .active, div.sidebar-item-container .show>.nav-link, div.sidebar-item-container .sidebar-link>code, div.sidebar-item-container:hover, div.sidebar-item-container:focus, .quarto-secondary-nav nav.quarto-page-breadcrumbs a:hover {
+    color: $primary;
+}
+
+.quarto-dashboard .nav-tabs .nav-link:hover:not(.active) {
+    border: 0;
+    color: $yellow;
+}
+.quarto-dashboard .nav-tabs .nav-link:not(.active) {
+    border: 0;
+    color: inherit;
+}
+.quarto-dashboard .sidebar{
+  padding-left: 5px;
+  background-color: $primary10fixed;
+  border-right: 0;
+}
+//for dash-footer
+.quarto-dashboard .dashboard-page {
+    margin-bottom:35px;
+}
+// value boxes (seemed to be messed up, hopefully can remove with new quarto release?)
+.value-box-showcase.html-fill-item.html-fill-container {
+    overflow: unset;
+}
+.html-fill-item.html-fill-container.value-box-grid {
+    overflow: hidden;
+}
+.quarto-dashboard .card.valuebox.bslib-card.bg-primary {
+    background-color: $primary !important
+}
+
+.quarto-dashboard .card.valuebox.bslib-card.bg-secondary {
+    background-color: $secondary !important
+}
+
+.quarto-dashboard .card.valuebox.bslib-card.bg-success {
+    background-color: $green !important;
+}
+
+.quarto-dashboard .card.valuebox.bslib-card.bg-info {
+    background-color: $cyan !important
+}
+
+.quarto-dashboard .card.valuebox.bslib-card.bg-warning {
+    background-color: $yellow !important;
+}
+
+.quarto-dashboard .card.valuebox.bslib-card.bg-danger {
+    background-color: $red !important;
+}
+
+.quarto-dashboard .card.valuebox.bslib-card.bg-light {
+    background-color: $atriumlightgray !important
+}
+
+.quarto-dashboard .card.valuebox.bslib-card.bg-dark {
+    background-color: $black !important
+}
+
+
+/*
+.nav-pills .nav-link.active:hover{
+  background-color: $primarydark;
+  color: $white;
+  border: 2px solid $primarydark;
+}
+*/
+.tab-content{
+  border-radius: $nav-pills-border-radius;
+  border-color: $nav-tabs-border-color;
+  border-top: $nav-tabs-border-color 1px solid;
+}
+.nav-tabs {
+    border-bottom: none;
+}
+
+
+//forms
+:root {
+    accent-color: $primary;
+}
+//navbar
+.navbar-dark{
+  background-color: $black;
+}
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus{
+	text-decoration: none;
+	color: $goldonblack;
+}
+.navbar .navbar-logo {
+    height: 30px;
+}
+//dropdowns
+.dropdown-item:hover{
+	text-decoration: underline;
+}
+
+//headings
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: $font-family-serif;
+  font-weight: 700;
+  color: $black;
+  margin-top:0.9rem;
+}
+
+h1 {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  color: $black;
+}
+
+h2 {
+	border-bottom-color: $primary25;
+
+}
+
+//heading default
+.quarto-title .subtitle{
+  font-weight: 400;
+  margin-top: -0.2em;
+  margin-bottom: 0;
+}
+.quarto-title-meta-heading{
+  color: $primary;
+}
+.quarto-title-meta-contents p{
+  font-style: italic;
+}
+.quarto-title-banner{
+  padding-top: 0;
+  padding-bottom: 1em;
+}
+
+//heading in quarto banner (optional, title-block-banner: true)
+
+.quarto-title-banner .quarto-title .title {
+  color: $white;
+}
+.quarto-title-banner .quarto-title .subtitle {
+  color: $white;
+  opacity: 0.7;
+}
+.quarto-title-banner.page-columns.page-full {
+    background: $primary;
+}
+
+.quarto-title-block:has(.quarto-title-banner){ //only if .quarto-title-banner exists
+    padding-bottom:20px;
+    margin-bottom:0;
+    background: $atriumlightgray;
+}
+
+
+//links
+a {
+  font-weight: 600;
+}
+.sidebar-navigation a, .nav-link {
+  font-weight: 400 !important;
+}
+span.navbar-title {
+  font-weight: 400;
+}
+//footer (created class used in footer.html)
+.basic-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: $footer-bg;
+    color: $footer-fg;
+    font-size: 0.75em;
+    font-weight: 200;
+    z-index: 9999;
+    border-top: 1px solid $primary;
+}
+
+.basic-footer a{
+  color: $goldonblack;
+}
+
+.basic-footer hr{
+  opacity: 1;
+}
+
+//dashboard footer
+.dash-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $footer-bg;
+  color: $footer-fg;
+  text-align: center;
+  height: 45px;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: block;
+}
+
+
+.dash-footer a:hover, .dash-footer a:focus{
+  color: $goldonblack;
+  text-decoration: none;
+}
+
+.dash-footer a {
+  color: $white;
+}
+
+.foot-left, .foot-right{
+  width: 20%;
+  float: left;
+  display: block;
+  padding-top: 3px;
+}
+.foot-center{
+  width: 60%;
+  float: left;
+  display: block;
+}
+
+@media (max-width: 700px){
+  .quarto-dashboard .dashboard-page {
+    margin-bottom:0;
+  }
+  .bslib-page-fill {
+    gap: 0;
+    }
+  .dash-footer{
+    position: inherit ;
+    height:fit-content;
+      display: table;
+      max-height: 100px;
+  }
+
+  .foot-center {
+        width:100%;
+       display:table-header-group;
+       float:none;
+  }
+
+  .foot-left, .foot-right{
+        width:100%;
+       display:table-footer-group;
+       text-align: center;
+       padding-top: 0;
+  }
+}
+
+
+//header (created class used in header.html)
+.basic-header {
+    text-align: center;
+    padding: 15px;
+    padding-right: 30px;
+    background-color: $black;
+    color: $white;
+    font-size: 1em;
+    font-weight: 200;
+    z-index: 9999;
+    top: 0;
+    //position: fixed;
+    width: 100%;
+}
+
+/*
+div#quarto-margin-sidebar:before {
+    font-family: "FontAwesome";
+    content: "\e064";
+    display: inline-flex;
+    position: absolute;
+}
+
+nav#TOC:before {
+    content: "I D E A S";
+    font-weight: bold;
+    display: inline-flex;
+    padding-left: 25px;
+}
+*/
+
+
+#toc-title {
+    text-transform: uppercase;
+    font-family: 'Cormorant';
+    font-weight: 900;
+    color: black;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+/*
+---adds ideas logo to toc
+#toc-title::before {
+    font-family: "FontAwesome";
+    content: "\e064";
+    display: inline-flex;
+    padding-right: 5px;
+    color: black;
+    font-size: smaller;
+}
+*/
+
+.basic-header a{
+  color: $goldonblack;
+}
+
+//modals
+.modal-content {
+    font-family: $font-family-sans-serif;
+}
+
+/*
+//for extra header to work
+header#quarto-header, div#quarto-content {
+    padding-top: 80px;
+}
+*/
+
+//tables
+tr:nth-child(even) {
+  background-color: $primary10;
+}
+th {
+  color: $white !important;
+  background-color: $black !important;
+//  border-bottom: 1px solid $primary25;
+}
+.table {
+//  border: 1px solid $primary25 !important;
+}
+
+
+
+//modals
+
+/* The Modal (background) */
+.mymodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.mymodal-content {
+  background-color: $white;
+  color: $black;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  min-width: 300px;
+}
+.mymodal-content a{
+  color: $primary;
+}
+.mymodal-content a:hover, .mymodel-content a:active{
+  text-decoration: underline;
+  color: $primary;
+}
+
+/* The Close Button */
+.mymodalclose {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.mymodalclose:hover,
+.mymodalclose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* temporary fixes for quarto dashboard */
+/* maybe can remove with new updates? */
+
+.sidebar {
+padding: 10px;
+}
+
+.callout-header {
+    flex-direction: row;
+}
+
+
+.callout-icon-container {
+    max-width: 20px;
+}
+
+.callout-title-container {
+    padding-top: 1px;
+}
