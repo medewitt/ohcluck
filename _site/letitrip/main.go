@@ -117,12 +117,14 @@ func drawGraph(data []int, strategy string) {
 	ctx := canvas.Call("getContext", "2d")
 
 	// Clear canvas
-	ctx.Call("clearRect", 0, 0, 700, 400)
+	// Get canvas dimensions from actual element size
+	width := canvas.Get("width").Float()
+	height := canvas.Get("height").Float()
+
+	ctx.Call("clearRect", 0, 0, width, height)
 
 	// Set up graph parameters
-	width := 700.0
-	height := 400.0
-	padding := 40.0
+	padding := width * 0.06 // Make padding relative to canvas size
 	maxValue := 0
 
 	for _, v := range data {
@@ -156,7 +158,7 @@ func drawGraph(data []int, strategy string) {
 		ctx.Set("fillStyle", "#000")
 		ctx.Set("font", "12px Arial")
 		ctx.Set("textAlign", "center")
-		ctx.Call("fillText", fmt.Sprint(v), x+barWidth/2, y-5)
+		ctx.Call("fillText", fmt.Sprintf("$%s", humanize(v)), x+barWidth/2, y-5)
 	}
 
 	// Add labels
@@ -168,4 +170,9 @@ func drawGraph(data []int, strategy string) {
 	ctx.Call("rotate", -math.Pi/2)
 	ctx.Call("fillText", "Dead Birds", 0, 0)
 	ctx.Call("restore")
+}
+
+// humanize formats large numbers with comma separators
+func humanize(n int) string {
+	return strconv.FormatInt(int64(n), 10)
 }

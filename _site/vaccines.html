@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -93,18 +113,29 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://kortessis-lab.shinyapps.io/h5n1/"> 
-<span class="menu-text">Dairy Outbreak Simulation</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-simulations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Simulations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-simulations">    
+        <li>
+    <a class="dropdown-item" href="https://kortessis-lab.shinyapps.io/h5n1/">
+ <span class="dropdown-text">Dairy Outbreak Simulation</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://medewitt.github.io/poultry-farm-game/"> 
-<span class="menu-text">Poultry Farm Game</span></a>
+        <li>
+    <a class="dropdown-item" href="https://medewitt.github.io/poultry-farm-game/">
+ <span class="dropdown-text">Poultry Farm Game</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./letitrip/index.html"> 
-<span class="menu-text">Let It Rip</span></a>
+        <li>
+    <a class="dropdown-item" href="./letitrip/index.html">
+ <span class="dropdown-text">Let It Rip</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./humansim/index.html">
+ <span class="dropdown-text">Human spillover</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./virology.html"> 
 <span class="menu-text">Virology</span></a>
@@ -143,8 +174,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#vaccines" id="toc-vaccines" class="nav-link active" data-scroll-target="#vaccines">Vaccines</a>
+  <ul class="collapse">
+  <li><a href="#animal-vaccines" id="toc-animal-vaccines" class="nav-link" data-scroll-target="#animal-vaccines">Animal Vaccines</a></li>
+  <li><a href="#human-vaccines" id="toc-human-vaccines" class="nav-link" data-scroll-target="#human-vaccines">Human Vaccines</a></li>
+  </ul></li>
+  <li><a href="#therapeutics" id="toc-therapeutics" class="nav-link" data-scroll-target="#therapeutics">Therapeutics</a>
+  <ul class="collapse">
+  <li><a href="#antivirals" id="toc-antivirals" class="nav-link" data-scroll-target="#antivirals">Antivirals</a></li>
+  <li><a href="#monoclonal-antibodies" id="toc-monoclonal-antibodies" class="nav-link" data-scroll-target="#monoclonal-antibodies">Monoclonal Antibodies</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -171,10 +217,265 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p>On this earth there are plagues and there are victims, and it’s up to us, as much as possible, not to join forces with the plagues. – Albert Camus, The Plague, 1946</p>
 </blockquote>
+<section id="vaccines" class="level2">
+<h2 class="anchored" data-anchor-id="vaccines">Vaccines</h2>
+<section id="animal-vaccines" class="level3">
+<h3 class="anchored" data-anchor-id="animal-vaccines">Animal Vaccines</h3>
+<p>At the present, only one vaccine has been conditionally approved for use in poultry in the United States <span class="citation" data-cites="Cohen_2025">(<a href="#ref-Cohen_2025" role="doc-biblioref">Cohen 2025</a>)</span>. The vaccine is produced by <a href="https://news.zoetis.com/press-releases/press-release-details/2025/Zoetis-Receives-Conditional-License-from-USDA-for-Avian-Influenza-Vaccine-H5N2-Subtype-Killed-Virus/default.aspx">Zoetis</a> and it contains a killed version of the H5N2 variant of the influenza virus.</p>
+</section>
+<section id="human-vaccines" class="level3">
+<h3 class="anchored" data-anchor-id="human-vaccines">Human Vaccines</h3>
+<p>Reproduced from <span class="citation" data-cites="Taaffe_Zhong_Goldin_Rawlings_Cowling_Zhang_2025">Taaffe et al. (<a href="#ref-Taaffe_Zhong_Goldin_Rawlings_Cowling_Zhang_2025" role="doc-biblioref">2025</a>)</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 8%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Manufacturer</th>
+<th>Location</th>
+<th>Vaccine name</th>
+<th>Subtype</th>
+<th>Vaccine type</th>
+<th>Adjuvant</th>
+<th>Age group indication</th>
+<th>Licensing authority</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AstraZeneca</td>
+<td>UK</td>
+<td>Pandemic influenza vaccine H5N1 AstraZeneca</td>
+<td>H5N1</td>
+<td>LAIV, egg based</td>
+<td>None</td>
+<td>Children†</td>
+<td>EMA</td>
+</tr>
+<tr class="even">
+<td>Denka Seiken</td>
+<td>Japan</td>
+<td>Adsorbed influenza vaccine (H5N1) “Seiken”</td>
+<td>H5N1</td>
+<td>IIV, egg based</td>
+<td>Aluminium-based</td>
+<td>Information unavailable</td>
+<td>PMDA</td>
+</tr>
+<tr class="odd">
+<td>GC Biopharma</td>
+<td>South Korea</td>
+<td>GCFLU H5N1</td>
+<td>H5N1</td>
+<td>IIV, egg based</td>
+<td>Aluminium-based</td>
+<td>Healthy adults</td>
+<td>MFDS</td>
+</tr>
+<tr class="even">
+<td>GlaxoSmithKline</td>
+<td>UK</td>
+<td>Adjupanrix</td>
+<td>H5N1</td>
+<td>IIV, egg based</td>
+<td>AS03</td>
+<td>Healthy adults, children, older adults</td>
+<td>EMA</td>
+</tr>
+<tr class="odd">
+<td>GlaxoSmithKline</td>
+<td>UK</td>
+<td>Q Pan/Influenza A (H5N1) virus monovalent vaccine, adjuvanted</td>
+<td>H5N1</td>
+<td>IIV, egg based</td>
+<td>AS03</td>
+<td>Healthy adults, children, older adults</td>
+<td>FDA</td>
+</tr>
+<tr class="even">
+<td>Daiichi Sankyo</td>
+<td>Japan</td>
+<td>Adsorbed cell culture-derived influenza vaccine H5N1</td>
+<td>H5N1</td>
+<td>IIV, cell based</td>
+<td>Aluminium-based</td>
+<td>Healthy adults, children, older adults</td>
+<td>PMDA</td>
+</tr>
+<tr class="odd">
+<td>Daiichi Sankyo</td>
+<td>Japan</td>
+<td>Adsorbed influenza vaccine (H5N1) “HOKKEN”</td>
+<td>H5N1</td>
+<td>IIV, egg based</td>
+<td>Aluminium-based</td>
+<td>Healthy adults</td>
+<td>PMDA</td>
+</tr>
+<tr class="even">
+<td>KM Biologics</td>
+<td>Japan</td>
+<td>Emulsion-adjuvanted cell-culture derived influenza HA vaccine</td>
+<td>H5N1</td>
+<td>IIV, cell based</td>
+<td>AS03</td>
+<td>Healthy adults</td>
+<td>PMDA</td>
+</tr>
+<tr class="odd">
+<td>Sanofi Pasteur</td>
+<td>France</td>
+<td>Influenza virus vaccine, H5N1</td>
+<td>H5N1</td>
+<td>IIV, egg based</td>
+<td>None</td>
+<td>Healthy adults</td>
+<td>FDA</td>
+</tr>
+<tr class="even">
+<td>CSL Seqirus</td>
+<td>Australia</td>
+<td>Audenz</td>
+<td>H5N1</td>
+<td>IIV, cell based</td>
+<td>MF59</td>
+<td>Healthy adults, children, older adults</td>
+<td>FDA</td>
+</tr>
+<tr class="odd">
+<td>CSL Seqirus</td>
+<td>Australia</td>
+<td>Foclivia</td>
+<td>H5N1</td>
+<td>IIV, egg based</td>
+<td>MF59</td>
+<td>Healthy adults, children, older adults</td>
+<td>EMA</td>
+</tr>
+<tr class="even">
+<td>CSL Seqirus</td>
+<td>Australia</td>
+<td>Panvax H5N1 influenza vaccine</td>
+<td>H5N1</td>
+<td>IIV, unknown</td>
+<td>Information unavailable</td>
+<td>Information unavailable</td>
+<td>TGA</td>
+</tr>
+<tr class="odd">
+<td>CSL Seqirus</td>
+<td>Australia</td>
+<td>Celldemic</td>
+<td>H5N1</td>
+<td>IIV, cell based</td>
+<td>MF59</td>
+<td>Healthy adults, children, older adults</td>
+<td>TGA/EMA</td>
+</tr>
+<tr class="even">
+<td>CSL Seqirus</td>
+<td>Australia</td>
+<td>Incellipan</td>
+<td>H5N1</td>
+<td>IIV, cell based</td>
+<td>MF59</td>
+<td>Healthy adults, children, older adults</td>
+<td>EMA</td>
+</tr>
+<tr class="odd">
+<td>CSL Seqirus</td>
+<td>Australia</td>
+<td>Zoonotic influenza vaccine, Seqirus</td>
+<td>H5N8</td>
+<td>IIV, egg based</td>
+<td>MF59</td>
+<td>Healthy adults, older adults</td>
+<td>EMA</td>
+</tr>
+<tr class="even">
+<td>CSL Seqirus</td>
+<td>Australia</td>
+<td>Panvax H5N8 influenza vaccine</td>
+<td>H5N8</td>
+<td>IIV, egg based</td>
+<td>Aluminium-based</td>
+<td>Healthy adults, children, older adults</td>
+<td>TGA</td>
+</tr>
+<tr class="odd">
+<td>CSL Seqirus</td>
+<td>Australia</td>
+<td>Aflunov</td>
+<td>H5N1</td>
+<td>IIV, egg based</td>
+<td>MF59</td>
+<td>Healthy adults, children, older adults</td>
+<td>TGA/EMA</td>
+</tr>
+<tr class="even">
+<td>Sinovac Biotech</td>
+<td>China</td>
+<td>Panflu</td>
+<td>H5N1</td>
+<td>IIV, egg based</td>
+<td>Aluminium-based</td>
+<td>Healthy adults</td>
+<td>SFDA</td>
+</tr>
+<tr class="odd">
+<td>Takeda Pharmaceutical</td>
+<td>Japan</td>
+<td>Cell cultured influenza vaccine (H5N1) “TAKEDA”</td>
+<td>H5N1</td>
+<td>IIV, cell based</td>
+<td>None</td>
+<td>Information unavailable</td>
+<td>PMDA</td>
+</tr>
+<tr class="even">
+<td>The Research Foundation for Microbial Diseases for Osaka University</td>
+<td>Japan</td>
+<td>Adsorbed influenza vaccine (H5N1) “BIKEN”</td>
+<td>H5N1</td>
+<td>IIV, egg based</td>
+<td>Aluminium-based</td>
+<td>Healthy adults</td>
+<td>PMDA</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="therapeutics" class="level2">
+<h2 class="anchored" data-anchor-id="therapeutics">Therapeutics</h2>
+<p>Therapeutics for viral infections are generally used after an infection occurs. We know that the human or the the animal host has been infected, and we can use therapeutics such as antivirals or monoclonal antibodies to treat the infection and reduce the severity of the disease (i.e., duration of illness, mortality, etc.).</p>
+<section id="antivirals" class="level3">
+<h3 class="anchored" data-anchor-id="antivirals">Antivirals</h3>
+</section>
+<section id="monoclonal-antibodies" class="level3">
 
 
 
-</main> <!-- /main -->
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Monoclonal Antibodies</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Cohen_2025" class="csl-entry" role="listitem">
+Cohen, Jon. 2025. <span>“U.s. Conditionally Approves Vaccine to Protect Poultry from Avian Flu.”</span> <em>Science</em>, February. <a href="https://www.science.org/content/article/u-s-conditionally-approves-vaccine-protect-poultry-avian-flu">https://www.science.org/content/article/u-s-conditionally-approves-vaccine-protect-poultry-avian-flu</a>.
+</div>
+<div id="ref-Taaffe_Zhong_Goldin_Rawlings_Cowling_Zhang_2025" class="csl-entry" role="listitem">
+Taaffe, Jessica, Shuyi Zhong, Shoshanna Goldin, Kate S. Rawlings, Benjamin J. Cowling, and Wenqing Zhang. 2025. <span>“An Overview of Influenza H5 Vaccines.”</span> <em>The Lancet Respiratory Medicine</em> 0 (0). <a href="https://doi.org/10.1016/S2213-2600(25)00052-9">https://doi.org/10.1016/S2213-2600(25)00052-9</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <footer class="page-columns page-full">
 
   <div class="basic-footer page-columns page-full">

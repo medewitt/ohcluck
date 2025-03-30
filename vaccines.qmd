@@ -4,3 +4,47 @@ title: "Vaccines and Therapeutics"
 
 >On this earth there are plagues and there are victims, and it's up to us, as much as possible, not to join forces with the plagues.
 > -- Albert Camus, The Plague, 1946
+
+## Vaccines
+
+### Animal Vaccines
+
+At the present, only one vaccine has been conditionally approved for use in poultry in the United States [@Cohen_2025].
+The vaccine is produced by [Zoetis](https://news.zoetis.com/press-releases/press-release-details/2025/Zoetis-Receives-Conditional-License-from-USDA-for-Avian-Influenza-Vaccine-H5N2-Subtype-Killed-Virus/default.aspx) and it contains a killed version of the H5N2 variant of the influenza virus.
+
+
+### Human Vaccines
+
+Reproduced from @Taaffe_Zhong_Goldin_Rawlings_Cowling_Zhang_2025
+
+| Manufacturer | Location | Vaccine name | Subtype | Vaccine type | Adjuvant | Age group indication | Licensing authority |
+|-------------|----------|--------------|---------|--------------|----------|---------------------|---------------------|
+| AstraZeneca | UK | Pandemic influenza vaccine H5N1 AstraZeneca | H5N1 | LAIV, egg based | None | Children† | EMA |
+| Denka Seiken | Japan | Adsorbed influenza vaccine (H5N1) "Seiken" | H5N1 | IIV, egg based | Aluminium-based | Information unavailable | PMDA |
+| GC Biopharma | South Korea | GCFLU H5N1 | H5N1 | IIV, egg based | Aluminium-based | Healthy adults | MFDS |
+| GlaxoSmithKline | UK | Adjupanrix | H5N1 | IIV, egg based | AS03 | Healthy adults, children, older adults | EMA |
+| GlaxoSmithKline | UK | Q Pan/Influenza A (H5N1) virus monovalent vaccine, adjuvanted | H5N1 | IIV, egg based | AS03 | Healthy adults, children, older adults | FDA |
+| Daiichi Sankyo | Japan | Adsorbed cell culture-derived influenza vaccine H5N1 | H5N1 | IIV, cell based | Aluminium-based | Healthy adults, children, older adults | PMDA |
+| Daiichi Sankyo | Japan | Adsorbed influenza vaccine (H5N1) "HOKKEN" | H5N1 | IIV, egg based | Aluminium-based | Healthy adults | PMDA |
+| KM Biologics | Japan | Emulsion-adjuvanted cell-culture derived influenza HA vaccine | H5N1 | IIV, cell based | AS03 | Healthy adults | PMDA |
+| Sanofi Pasteur | France | Influenza virus vaccine, H5N1 | H5N1 | IIV, egg based | None | Healthy adults | FDA |
+| CSL Seqirus | Australia | Audenz | H5N1 | IIV, cell based | MF59 | Healthy adults, children, older adults | FDA |
+| CSL Seqirus | Australia | Foclivia | H5N1 | IIV, egg based | MF59 | Healthy adults, children, older adults | EMA |
+| CSL Seqirus | Australia | Panvax H5N1 influenza vaccine | H5N1 | IIV, unknown | Information unavailable | Information unavailable | TGA |
+| CSL Seqirus | Australia | Celldemic | H5N1 | IIV, cell based | MF59 | Healthy adults, children, older adults | TGA/EMA |
+| CSL Seqirus | Australia | Incellipan | H5N1 | IIV, cell based | MF59 | Healthy adults, children, older adults | EMA |
+| CSL Seqirus | Australia | Zoonotic influenza vaccine, Seqirus | H5N8 | IIV, egg based | MF59 | Healthy adults, older adults | EMA |
+| CSL Seqirus | Australia | Panvax H5N8 influenza vaccine | H5N8 | IIV, egg based | Aluminium-based | Healthy adults, children, older adults | TGA |
+| CSL Seqirus | Australia | Aflunov | H5N1 | IIV, egg based | MF59 | Healthy adults, children, older adults | TGA/EMA |
+| Sinovac Biotech | China | Panflu | H5N1 | IIV, egg based | Aluminium-based | Healthy adults | SFDA |
+| Takeda Pharmaceutical | Japan | Cell cultured influenza vaccine (H5N1) "TAKEDA" | H5N1 | IIV, cell based | None | Information unavailable | PMDA |
+| The Research Foundation for Microbial Diseases for Osaka University | Japan | Adsorbed influenza vaccine (H5N1) "BIKEN" | H5N1 | IIV, egg based | Aluminium-based | Healthy adults | PMDA |
+
+## Therapeutics
+
+Therapeutics for viral infections are generally used after an infection occurs.
+We know that the human or the the animal host has been infected, and we can use therapeutics such as antivirals or monoclonal antibodies to treat the infection and reduce the severity of the disease (i.e., duration of illness, mortality, etc.).
+
+### Antivirals
+
+### Monoclonal Antibodies

@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - letitrip/*
+    - humansim/*
 
 website:
   title: "Oh Cluck!"
@@ -10,12 +11,16 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: https://kortessis-lab.shinyapps.io/h5n1/
-        text: Dairy Outbreak Simulation
-      - href: https://medewitt.github.io/poultry-farm-game/
-        text: Poultry Farm Game
-      - href: letitrip/index.html
-        text: Let It Rip
+      - text: Simulations
+        menu:
+        - href: https://kortessis-lab.shinyapps.io/h5n1/
+          text: Dairy Outbreak Simulation
+        - href: https://medewitt.github.io/poultry-farm-game/
+          text: Poultry Farm Game
+        - href: letitrip/index.html
+          text: Let It Rip
+        - href: humansim/index.html
+          text: Human spillover
       - virology.qmd
       - vaccines.qmd
       - text: Epidemiology
@@ -33,5 +38,5 @@ format:
     toc: true
     include-in-header: fragments/header.html
     include-after-body: fragments/footer.html
-
+    bibliography: references.bib
 
