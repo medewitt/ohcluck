@@ -2,6 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+    <script src="../site_libs/quarto-nav/headroom.min.js"></script>
+    <script src="../site_libs/clipboard/clipboard.min.js"></script>
+    <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+    <script src="../site_libs/quarto-search/fuse.min.js"></script>
+    <script src="../site_libs/quarto-search/quarto-search.js"></script>
+    <meta name="quarto:offset" content="./">
+    <script src="../site_libs/quarto-html/quarto.js"></script>
+    <script src="../site_libs/quarto-html/popper.min.js"></script>
+    <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+    <script src="../site_libs/quarto-html/anchor.min.js"></script>
+    <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+    <link href="../site_libs/quarto-html/quarto-syntax-highlighting-3a01e2046221230fdceeea94b1ec5d67.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+    <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+    <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <link href="../site_libs/bootstrap/bootstrap-8fad8443f8f3d14ee616e282588d733a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+    <script src="https://kit.fontawesome.com/1ffe760482.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal-to-Human Infection Spillover Simulator</title>
     <style>
@@ -77,10 +94,10 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background-color: #3498db; /* Blue for normal birds */
+            background-color: rgba(0, 140, 149, 0.6); /* Blue for normal birds, with 60% opacity */
         }
         .bird-dot.infected {
-            background-color: #e67e22; /* Orange for infected birds */
+            background-color: rgba(255, 127, 49, 1); /* Orange for infected birds, with 60% opacity */
         }
         .human-viz {
             border: 1px solid #ddd;
@@ -102,13 +119,13 @@
             font-weight: bold;
         }
         .info-box {
-            background-color: #e3f2fd;
+            background-color: rgba(140, 109, 44, 0.4);
             padding: 15px;
             border-radius: 8px;
             margin-top: 20px;
         }
         button {
-            background-color: #4CAF50;
+            background-color: #6BA539;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -165,7 +182,7 @@
         <div class="visualization-section">
             <div class="bird-viz" id="birdVisualization"></div>
             <div class="human-viz">
-                <div class="human-icon">👤</div>
+                <div class="human-icon"><i class="fa-solid fa-person"></i></div>
                 <div class="probability" id="encounterProb">Probability of encountering an infected animal: 0%</div>
                 <div class="probability" id="infectionProb">Overall infection probability: 0%</div>
             </div>
@@ -230,14 +247,14 @@
             // Update info box
             document.getElementById('infoBox').innerHTML = `
                 <p><strong>Summary:</strong></p>
-                <p>Total animals: ${totalAnimals.toLocaleString()}</p>
-                <p>Infected animals: ${infectedAnimals.toLocaleString()} (${((infectedAnimals/totalAnimals)*100).toFixed(4)}% of total)</p>
-                <p>Infected animals with mutation: ${infectedWithMutation.toFixed(2)} (${((infectedWithMutation/totalAnimals)*100).toExponential(4)}% of total)</p>
-                <p>Probability of human contact with any animal: ${(contactProb * 100).toFixed(4)}%</p>
-                <p>Probability of human contact with an infected mutated animal: ${(encounterInfectedProb * 100).toExponential(4)}%</p>
+                <p>Total animals (poultry population): ${totalAnimals.toLocaleString()}</p>
+                <p>Infected animals: ${infectedAnimals.toLocaleString()} (${((infectedAnimals/totalAnimals)*100).toFixed(2)}% of total)</p>
+                <p>Infected animals with mutation: ${infectedWithMutation.toFixed(2)} (${((infectedWithMutation/totalAnimals)*100).toExponential(2)}% of total)</p>
+                <p>Probability of human contact with any animal: ${(contactProb * 100).toFixed(2)}%</p>
+                <p>Probability of human contact with an infected mutated animal: ${(encounterInfectedProb * 100).toExponential(2)}%</p>
                 <p>Probability of infection given contact: ${(infectionProb * 100).toFixed(2)}%</p>
-                <p>Overall probability of human infection: ${(overallInfectionProb * 100).toExponential(4)}%</p>
-                <p>Given that 1.7M people work in the poultry industry, approximately ${Math.round(overallInfectionProb * 1700000)} would become infected.</p>
+                <p>Overall probability of human infection: ${(overallInfectionProb * 100).toExponential(2)}%</p>
+                <p><i>Given that 1.7M people work in the poultry industry, approximately</i> <strong>${Math.round(overallInfectionProb * 1700000)} would become infected.</strong></p>
             `;
         }
     </script>

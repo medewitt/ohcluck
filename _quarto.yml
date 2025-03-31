@@ -6,6 +6,7 @@ project:
 
 website:
   title: "Oh Cluck!"
+  favicon: assets/H5N10001.png
   navbar:
     background: primary
     left:
