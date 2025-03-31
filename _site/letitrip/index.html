@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Virus Simulation</title>
+    <title>Culling Strategy Simulation</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -59,12 +60,19 @@
             width: 300px;
         }
         .container {
-            width: 80vw;
+            width: 80%;
             margin: 0 auto;
         }
     </style>
+    <script>
+        function resizeCanvas() {
+            var canvs = document.getElementById("chart");
+            canvs.width = window.innerWidth * .8;
+            canvs.height = window.innerHeight *.4;
+        }
+        </script>
 </head>
-<body>
+<body onload="resizeCanvas();">
     <div class="nav-bar">
         <a href="../index.html">Oh Cluck!</a>
     </div>
@@ -81,7 +89,7 @@
             <button onclick="runSimulation('no-culling', document.getElementById('mortalityRate').value)">Run without Culling</button>
         </div>
         <div id="results"></div>
-        <canvas id="chart" width="80vw" height="400"></canvas>
+        <canvas id="chart" ></canvas>
     </div>
 </body>
 <footer>
