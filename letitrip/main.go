@@ -5,6 +5,8 @@ import (
 	"math"
 	"strconv"
 	"syscall/js"
+
+	"github.com/dustin/go-humanize"
 )
 
 type SimulationResult struct {
@@ -151,28 +153,23 @@ func drawGraph(data []int, strategy string) {
 		y := height - padding - float64(v)*yScale
 		barHeight := float64(v) * yScale
 
-		ctx.Set("fillStyle", "#00f")
+		ctx.Set("fillStyle", "#624d17")
 		ctx.Call("fillRect", x, y, barWidth, barHeight)
 
 		// Add value label on top of each bar
 		ctx.Set("fillStyle", "#000")
 		ctx.Set("font", "12px Arial")
 		ctx.Set("textAlign", "center")
-		ctx.Call("fillText", fmt.Sprintf("$%s", humanize(v)), x+barWidth/2, y-5)
+		ctx.Call("fillText", fmt.Sprintf("$%s", humanize.Commaf(float64(v))), x+barWidth/2, y-5)
 	}
 
 	// Add labels
 	ctx.Set("fillStyle", "#000")
-	ctx.Set("font", "12px Arial")
+	ctx.Set("font", "14px Arial")
 	ctx.Call("fillText", "Cycles", width/2, height-10)
 	ctx.Call("save")
 	ctx.Call("translate", 15, height/2)
 	ctx.Call("rotate", -math.Pi/2)
-	ctx.Call("fillText", "Dead Birds", 0, 0)
+	ctx.Call("fillText", "Cost of Dead Birds", 0, 0)
 	ctx.Call("restore")
-}
-
-// humanize formats large numbers with comma separators
-func humanize(n int) string {
-	return strconv.FormatInt(int64(n), 10)
 }

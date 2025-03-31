@@ -79,6 +79,17 @@
     <div class="container">
         <h1>Culling Strategy Simulation</h1>
         <p>This simulation examines the impact of two different strategies, culling 200,000 birds (both infected and healthy) once an outbreak is detected, or allowing the outbreak to run its course. Each strategy has implications as culling will sacrifice healthy birds while allowing the infection to run rampant will also lead to the deaths of many birds and allow the virus to spread to the other farms that you own.</p>
+        <p>Let's assume that you have a farm with 600,000 birds. Each bird costs $3 to raise.</p>
+        <p><strong>Assumptions:</strong>
+            <ul>
+                <li>The basic reproduction number (R0) is 3.0 meaning each infected bird will infect 3 other birds in a fully susceptible population.</li>
+                <li>The baseline mortality rate is 95% (i.e., 95% of the infected birds will die)</li>
+                <li>You detect an outbreak when 1,000 birds have been infected (likely because they died and you tested them for bird flu)</li>
+                <li>You have the option of <strong>1) culling 200,000 birds once the outbreak is detected </strong> or <strong>2) allowing the outbreak to run its course </strong>following a traditional SIR framework for disease dynamics.</li>
+                <li>Assume that recovered birds can still be sold/eaten.</li>
+            </ul>
+        </p>
+        <p><strong>Question:</strong> When do the different strategies make sense (i.e., what mortality rates make culling more cost effective)?</p>
         <div class="slider-container">
             <label for="mortalityRate">Mortality Rate (%): <span id="mortalityValue">100</span></label>
             <input type="range" id="mortalityRate" min="0" max="100" value="100" step="1" 
