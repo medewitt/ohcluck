@@ -87,6 +87,7 @@
                 <li>You detect an outbreak when 1,000 birds have been infected (likely because they died and you tested them for bird flu)</li>
                 <li>You have the option of <strong>1) culling 200,000 birds once the outbreak is detected </strong> or <strong>2) allowing the outbreak to run its course </strong>following a traditional SIR framework for disease dynamics.</li>
                 <li>Assume that recovered birds can still be sold/eaten.</li>
+                <li>Assume that there are three outbreaks over the course of 3 years.</li>
             </ul>
         </p>
         <p><strong>Question:</strong> When do the different strategies make sense (i.e., what mortality rates make culling more cost effective)?</p>
@@ -94,12 +95,16 @@
             <label for="mortalityRate">Mortality Rate (%): <span id="mortalityValue">100</span></label>
             <input type="range" id="mortalityRate" min="0" max="100" value="100" step="1" 
                    oninput="document.getElementById('mortalityValue').textContent = this.value">
+            <label for="mutationRate">Mutation Rate: <span id="mutationValue">0.001</span></label>
+            <input type="range" id="mutationRate" min="0.001" max=".1" value="0.001" step=".001" 
+                   oninput="document.getElementById('mutationValue').textContent = this.value">
         </div>
         <div class="button-container">
-            <button onclick="runSimulation('culling', document.getElementById('mortalityRate').value)">Run with Culling</button>
-            <button onclick="runSimulation('no-culling', document.getElementById('mortalityRate').value)">Run without Culling</button>
+            <button onclick="runSimulation('culling', document.getElementById('mortalityRate').value, document.getElementById('mutationRate').value)">Run with Culling</button>
+            <button onclick="runSimulation('no-culling', document.getElementById('mortalityRate').value, document.getElementById('mutationRate').value)">Run without Culling</button>
         </div>
         <div id="results"></div>
+        <div id="mutated"></div>
         <canvas id="chart" ></canvas>
     </div>
 </body>

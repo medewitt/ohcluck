@@ -10,8 +10,9 @@ import (
 )
 
 type SimulationResult struct {
-	deadBirds []int
-	totalCost float64
+	deadBirds    []int
+	totalCost    float64
+	totalMutated int
 }
 
 func main() {
@@ -31,17 +32,22 @@ func runSimulation(this js.Value, args []js.Value) interface{} {
 	cycles := 3
 	cullingThreshold := 1000
 	cullingAmount := 200000
+	mutationRateStr := args[2].String()
+	mutationRate, _ := strconv.ParseFloat(mutationRateStr, 64)
 
 	var result SimulationResult
 	if strategy == "culling" {
-		result = simulateWithCulling(initialPopulation, infected, r0, cycles, cullingThreshold, cullingAmount, mortalityRate)
+		result = simulateWithCulling(initialPopulation, infected, r0, cycles, cullingThreshold, cullingAmount, mortalityRate, mutationRate)
 	} else {
-		result = simulateWithoutCulling(initialPopulation, infected, r0, cycles, mortalityRate)
+		result = simulateWithoutCulling(initialPopulation, infected, r0, cycles, mortalityRate, mutationRate)
 	}
 
 	// Update results text
-	resultText := fmt.Sprintf("Total cost: $%.2f", result.totalCost)
+	resultText := fmt.Sprintf("Total cost: $%s", humanize.Commaf(float64(result.totalCost)))
 	js.Global().Get("document").Call("getElementById", "results").Set("innerHTML", resultText)
+
+	mutatedText := fmt.Sprintf("Number of birds with human adapted virus: %s", humanize.Commaf(float64(result.totalMutated)))
+	js.Global().Get("document").Call("getElementById", "mutated").Set("innerHTML", mutatedText)
 
 	// Draw graph
 	drawGraph(result.deadBirds, strategy)
@@ -49,7 +55,7 @@ func runSimulation(this js.Value, args []js.Value) interface{} {
 	return nil
 }
 
-func simulateWithCulling(population, infected int, r0 float64, cycles, threshold, cullingAmount int, mortalityRate float64) SimulationResult {
+func simulateWithCulling(population, infected int, r0 float64, cycles, threshold, cullingAmount int, mortalityRate float64, mutationRate float64) SimulationResult {
 	deadBirds := make([]int, cycles)
 	totalCost := 0.0
 
@@ -62,15 +68,17 @@ func simulateWithCulling(population, infected int, r0 float64, cycles, threshold
 	}
 
 	return SimulationResult{
-		deadBirds: deadBirds,
-		totalCost: totalCost,
+		deadBirds:    deadBirds,
+		totalCost:    totalCost,
+		totalMutated: int(float64(threshold*cycles) * mutationRate),
 	}
 }
 
-func simulateWithoutCulling(population, infected int, r0 float64, cycles int, mortalityRate float64) SimulationResult {
+func simulateWithoutCulling(population, infected int, r0 float64, cycles int, mortalityRate float64, mutationRate float64) SimulationResult {
 	deadBirds := make([]int, cycles)
 	totalDead := 0
 	totalCost := 0.0
+	totalInfected := 0.0
 	daysPerCycle := 120
 	beta := r0 / 7.0   // Transmission rate assuming 7 day infectious period
 	gamma := 1.0 / 7.0 // Recovery rate (1/infectious period)
@@ -97,20 +105,23 @@ func simulateWithoutCulling(population, infected int, r0 float64, cycles int, mo
 			S += dS
 			I += dI
 			R += dR
+			totalInfected += I
 		}
 
 		// Apply mortality rate to recovered birds
 		actualDeaths := int(R * mortalityRate)
 		deadBirds[i] = totalDead + actualDeaths
 		totalDead += actualDeaths
+
 	}
 
 	// Add cost for final cycle's dead birds
 	totalCost += float64(totalDead) * 3
 
 	return SimulationResult{
-		deadBirds: deadBirds,
-		totalCost: totalCost,
+		deadBirds:    deadBirds,
+		totalCost:    totalCost,
+		totalMutated: int(totalInfected * mutationRate),
 	}
 }
 
@@ -160,7 +171,7 @@ func drawGraph(data []int, strategy string) {
 		ctx.Set("fillStyle", "#000")
 		ctx.Set("font", "12px Arial")
 		ctx.Set("textAlign", "center")
-		ctx.Call("fillText", fmt.Sprintf("$%s", humanize.Commaf(float64(v))), x+barWidth/2, y-5)
+		ctx.Call("fillText", fmt.Sprintf("%s dead", humanize.Commaf(float64(v))), x+barWidth/2, y-5)
 	}
 
 	// Add labels
