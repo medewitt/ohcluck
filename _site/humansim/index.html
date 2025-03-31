@@ -95,7 +95,7 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background-color: rgba(0, 140, 149, 0.6); /* Blue for normal birds, with 60% opacity */
+            background-color: rgba(0, 140, 149, 0.2); /* Blue for normal birds, with 60% opacity */
         }
         .bird-dot.infected {
             background-color: rgba(255, 127, 49, 1); /* Orange for infected birds, with 60% opacity */
@@ -153,12 +153,12 @@
         
         <div class="input-section">
             <div class="input-group">
-                <label for="totalAnimals">Total Number of Animals:</label>
-                <input type="number" id="totalAnimals" value="522000000" min="1">
+                <label for="totalAnimals">Total Number of Animals (millions):</label>
+                <input type="number" id="totalAnimals" value="522" min="1">
             </div>
             <div class="input-group">
-                <label for="infectedAnimals">Number of Infected Animals:</label>
-                <input type="number" id="infectedAnimals" value="168268678" min="0">
+                <label for="infectedAnimals">Number of Infected Animals (millions):</label>
+                <input type="number" id="infectedAnimals" value="168" min="0">
             </div>
             <div class="input-group">
                 <label for="mutationProb">Probability of Mutation for Human Infection:</label>
@@ -174,7 +174,7 @@
             </div>
             <div class="input-group">
                 <label for="sampleSize">Sample Size for Visualization:</label>
-                <input type="number" id="sampleSize" value="1000" min="10" max="5000">
+                <input type="number" id="sampleSize" value="10000" min="10" max="5000">
             </div>
         </div>
         
@@ -202,8 +202,8 @@
         
         function updateSimulation() {
             // Get input values
-            const totalAnimals = parseInt(document.getElementById('totalAnimals').value);
-            const infectedAnimals = Math.min(parseInt(document.getElementById('infectedAnimals').value), totalAnimals);
+            const totalAnimals = parseInt(document.getElementById('totalAnimals').value) * 1000000;
+            const infectedAnimals = Math.min(parseInt(document.getElementById('infectedAnimals').value), totalAnimals) * 1000000;
             const mutationProb = parseFloat(document.getElementById('mutationProb').value);
             const contactProb = parseFloat(document.getElementById('contactProb').value);
             const infectionProb = parseFloat(document.getElementById('infectionProb').value);
@@ -242,15 +242,15 @@
             }
             
             // Update probability displays
-            document.getElementById('encounterProb').innerHTML = `Probability of encountering an infected animal with mutation: ${(encounterInfectedProb * 100).toExponential(4)}%`;
-            document.getElementById('infectionProb').innerHTML = `Overall infection probability: ${(overallInfectionProb * 100).toExponential(4)}%`;
+            document.getElementById('encounterProb').innerHTML = `Probability of encountering an infected animal with mutation: ${(encounterInfectedProb * 100).toExponential(2)}%`;
+            document.getElementById('infectionProb').innerHTML = `Overall infection probability: ${(overallInfectionProb * 100).toExponential(1)}%`;
             
             // Update info box
             document.getElementById('infoBox').innerHTML = `
                 <p><strong>Summary:</strong></p>
                 <p>Total animals (poultry population): ${totalAnimals.toLocaleString()}</p>
                 <p>Infected animals: ${infectedAnimals.toLocaleString()} (${((infectedAnimals/totalAnimals)*100).toFixed(2)}% of total)</p>
-                <p>Infected animals with mutation: ${infectedWithMutation.toFixed(2)} (${((infectedWithMutation/totalAnimals)*100).toExponential(2)}% of total)</p>
+                <p>Infected animals with mutation: ${infectedWithMutation.toFixed(0)} (${((infectedWithMutation/totalAnimals)*100).toExponential(2)}% of total)</p>
                 <p>Probability of human contact with any animal: ${(contactProb * 100).toFixed(2)}%</p>
                 <p>Probability of human contact with an infected mutated animal: ${(encounterInfectedProb * 100).toExponential(2)}%</p>
                 <p>Probability of infection given contact: ${(infectionProb * 100).toFixed(2)}%</p>
